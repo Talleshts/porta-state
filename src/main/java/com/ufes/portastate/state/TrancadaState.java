@@ -10,19 +10,20 @@ import com.ufes.portastate.model.Porta;
  *
  * @author Talles.h.santos
  */
-public class TrancadaState extends PortaState{
+public class TrancadaState extends PortaState {
 
     public TrancadaState(Porta porta) {
         super(porta);
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         return "Trancada";
     }
     
     @Override
-    public void destrancar(){
-        
+    public void destrancar() {
+        System.out.println("Destrancando a porta...");
+        porta.setState(new FechadaState(porta)); // Transição para estado Fechada
     }
 }

@@ -4,6 +4,7 @@
  */
 package com.ufes.portastate.model;
 
+import com.ufes.portastate.state.FechadaState;
 import com.ufes.portastate.state.PortaState;
 import java.util.Optional;
 
@@ -13,34 +14,37 @@ import java.util.Optional;
  */
 public class Porta {
     private String nome;
-    private Boolean aberta;
-    private Boolean trancada;
     private PortaState estado;
-    
 
     public Porta(String nome) {
-        
+        this.nome = nome;
+        this.estado = new FechadaState(this); // Porta começa fechada
+        System.out.println(nome + " criada e está no estado: " + estado);
     }
-    
-    
-    public void trancar(){
-        throw new RuntimeException("Não é possível trancar uma porta " + toString());
+
+    public void trancar() {
+        estado.trancar();
     }
-    
-    public void abrir(){
-        throw new RuntimeException("Não é possível abrir uma porta " + toString());
+
+    public void abrir() {
+        estado.abrir();
     }
-        
-    public void destrancar(){
-        throw new RuntimeException("Não é possível destrancar uma porta " + toString());        
+
+    public void destrancar() {
+        estado.destrancar();
     }
-            
-    public void fechar(){
-        throw new RuntimeException("Não é possível fechar uma porta " + toString());        
+
+    public void fechar() {
+        estado.fechar();
     }
-    
-    public void setState(PortaState estado){
-        
+
+    public void setState(PortaState estado) {
+        this.estado = estado;
+        System.out.println("Porta agora está no estado: " + estado);
     }
-    
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }

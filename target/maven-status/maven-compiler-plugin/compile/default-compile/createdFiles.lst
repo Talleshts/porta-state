@@ -1,0 +1,6 @@
+com\ufes\portastate\state\TrancadaState.class
+com\ufes\portastate\state\PortaState.class
+com\ufes\portastate\state\AbertaState.class
+com\ufes\portastate\state\FechadaState.class
+com\ufes\portastate\Principal.class
+com\ufes\portastate\model\Porta.class

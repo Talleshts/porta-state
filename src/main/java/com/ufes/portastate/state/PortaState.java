@@ -11,27 +11,25 @@ import com.ufes.portastate.model.Porta;
  * @author Talles.h.santos
  */
 public abstract class PortaState {
+    protected Porta porta;
 
     public PortaState(Porta porta) {
+        this.porta = porta;
     }
 
-    
-    
-    public void trancar(){
+    public void trancar() {
         throw new RuntimeException("Não é possível trancar uma porta " + toString());
     }
     
-    public void abrir(){
+    public void abrir() {
         throw new RuntimeException("Não é possível abrir uma porta " + toString());
     }
         
-    public void destrancar(){
+    public void destrancar() {
         throw new RuntimeException("Não é possível destrancar uma porta " + toString());        
     }
             
-    public void fechar(){
+    public void fechar() {
         throw new RuntimeException("Não é possível fechar uma porta " + toString());        
     }
-    
-
 }

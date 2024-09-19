@@ -16,8 +16,21 @@ public class Principal {
     public static void main(String[] args) {
         try {
             Porta porta = new Porta("Porta 1");
+            porta.abrir();
+            porta.fechar();
+            porta.trancar();
+            porta.destrancar();
+            porta.abrir();
+            
+            System.out.println("\nInserindo nova porta!\n");
+            
+            Porta portaLab = new Porta("Porta do Laboratório");
+            portaLab.abrir();
+            portaLab.fechar();
+            portaLab.trancar();
+            portaLab.abrir();
         } catch (Exception e) {
-            System.out.println("Falha: " + e);
+            System.out.println("Falha: " + e.getMessage());
         }
     }
 }
