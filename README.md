@@ -1,4 +1,4 @@
-# Porta State Pattern Example
+# Porta State Pattern
 
 Este projeto é uma implementação do padrão de projeto State, usando o exemplo de uma porta que pode estar em diferentes estados: aberta, fechada e trancada. O objetivo é demonstrar como o padrão State permite que um objeto altere seu comportamento quando seu estado interno muda.
 
